@@ -43,20 +43,20 @@ public class CustomerDaoImpl implements CustomerDao{
 		session.flush();
 	}
 
+	@SuppressWarnings("unchecked")
 	public Customer getByEmail(String email) {
 		Session session = sessionFactory.openSession();
 		String hql = "from Customer where email = :xxx";
 		Query q = session.createQuery(hql);
 		q.setParameter("xxx", email);
 		
-		List l = q.list();
-		Customer c = null;
-		if (l.size() > 0){
-			c = (Customer)l.get(0);
-		}
-		return c;
-		
-//		return (Customer) (q.list().size() > 0 ? q.list().get(0) : null);
+		List<Customer> l = q.list();
+		return (Customer) (l.size() > 0 ? l.get(0) : null);
+	}
+
+	public Customer getById(String id) {
+		Session session = sessionFactory.openSession();
+        return (Customer) session.get(Customer.class, id);
 	}
 
 

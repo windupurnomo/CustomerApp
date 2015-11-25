@@ -19,8 +19,8 @@ public class Customer {
 	private String email;
 	private String phone;
 	
-	@OneToMany(mappedBy="customer", fetch = FetchType.LAZY, cascade={CascadeType.ALL})
-	private List<Pemesanan> orders;
+//	@OneToMany(mappedBy="customer", fetch = FetchType.LAZY, cascade={CascadeType.ALL})
+//	private List<Pemesanan> orders;
 	
 	public String getId() {
 		return id;
@@ -46,12 +46,12 @@ public class Customer {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public List<Pemesanan> getOrders() {
-		return orders;
-	}
-	public void setOrders(List<Pemesanan> orders) {
-		this.orders = orders;
-	}
+//	public List<Pemesanan> getOrders() {
+//		return orders;
+//	}
+//	public void setOrders(List<Pemesanan> orders) {
+//		this.orders = orders;
+//	}
 	
 	
 }

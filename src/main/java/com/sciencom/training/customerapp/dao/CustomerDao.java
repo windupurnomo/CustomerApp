@@ -10,5 +10,6 @@ public interface CustomerDao {
 	public void update(Customer customer);
 	public void delete(Customer customer);
 	
+	public Customer getById(String id);
 	public Customer getByEmail(String email);
 }
